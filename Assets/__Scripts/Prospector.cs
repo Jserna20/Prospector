@@ -9,6 +9,7 @@ public class Prospector : MonoBehaviour {
 
     static public Prospector S;
 
+<<<<<<< HEAD
     [Header("Set in Inspector")]
     public TextAsset deckXML;
     public TextAsset layoutXML;
@@ -80,6 +81,14 @@ public class Prospector : MonoBehaviour {
             layoutAnchor = tGO.transform;              // Grab its Transform 
             layoutAnchor.transform.position = layoutCenter;   // Position it 
         }
+=======
+	[Header("Set in Inspector")]
+	public TextAsset			deckXML;
+
+
+	[Header("Set Dynamically")]
+	public Deck					deck;
+>>>>>>> parent of f5027ff... Up to Page 668
 
         CardProspector cp;
         // Follow the layout 
@@ -100,6 +109,7 @@ public class Prospector : MonoBehaviour {
             // CardProspectors in the tableau have the state CardState.tableau 
             cp.SetSortingLayerName(tSD.layerName); // Set the sorting layers 
 
+<<<<<<< HEAD
             tableau.Add(cp); // Add this CardProspector to the List<> 
         }
 
@@ -321,6 +331,12 @@ layout.multiplier.y * layout.discardPile.y,
         // If one is Ace and the other King, they are adjacent 
         if (c0.rank == 1 && c1.rank == 13) return (true);
         if (c0.rank == 13 && c1.rank == 1) return (true);
+=======
+	void Start() {
+		deck = GetComponent<Deck> ();
+		deck.InitDeck (deckXML.text);
+	}
+>>>>>>> parent of f5027ff... Up to Page 668
 
         // Otherwise, return false 
         return (false);
